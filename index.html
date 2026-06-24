@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negócio Digital em 7 Dias™ - Método N7D</title>
+    <style>
+        /* ============ RESET ============ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            overflow-x: hidden;
+        }
+
+        /* ============ CONTAINER ============ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            background: linear-gradient(180deg, rgba(26, 26, 46, 0.98) 0%, rgba(26, 26, 46, 0.95) 100%);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #ffc107;
+            box-shadow: 0 10px 40px rgba(255, 193, 7, 0.15);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ffc107;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 10px rgba(255, 193, 7, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo span {
+            color: #00d4ff;
+            font-size: 16px;
+            display: block;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: -2px;
+        }
+
+        .header-cta a {
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+            display: inline-block;
+        }
+
+        .header-cta a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            display: flex;
+            gap: 60px;
+            width: 100%;
+            align-items: center;
+            justify-items: center;
+            padding: 80px 0;
+            min-height: auto;
+            background: linear-gradient(135deg, #0f1b2e 0%, #1a2847 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+            top: -100px;
+            right: -150px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 193, 7, 0.08) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 193, 7, 0.05) 100%);
+            border: 2px solid #ffc107;
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            color: #ffc107;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+        }
+
+        h1 {
+            font-size: 56px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 900;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        .highlight {
+            color: #00d4ff;
+            font-style: italic;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            color: #d0d0e0;
+            width: 80%;
+            text-align: center;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: row;
+            gap: 14px;
+            margin-bottom: 35px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 15px;
+            color: #e0e0f0;
+        }
+
+        .feature-item::before {
+            content: '✓';
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 22px;
+            flex-shrink: 0;
+            background: rgba(0, 212, 255, 0.2);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #fff;
+            padding: 16px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 50px rgba(0, 212, 255, 0.5);
+        }
+
+        /* ============ HERO IMAGE (STATS + CARD) ============ */
+        .hero-image {
+            position: relative;
+            z-index: 2;
+            display: none;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+
+        .stat-box:hover {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(255, 193, 7, 0.1) 100%);
+            border-color: rgba(0, 212, 255, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 900;
+            color: #00d4ff;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #e0e0e0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .hero-card {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%);
+            border: 2px solid #ffc107;
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(255, 193, 7, 0.2);
+        }
+
+        .card-header {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffc107;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .card-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #d0d0e0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .card-icon {
+            font-size: 20px;
+        }
+
+        .card-price {
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 193, 7, 0.2);
+            text-align: center;
+        }
+
+        .price-value {
+            font-size: 36px;
+            font-weight: 900;
+            color: #00d4ff;
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+
+        /* ============ OFFERINGS SECTION ============ */
+        .offerings {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #ffc107;
+            margin-top: -30px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .offering-card {
+            background: rgba(255, 193, 7, 0.05);
+            border: 2px solid #ffc107;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .offering-card:hover {
+            background: rgba(255, 193, 7, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 193, 7, 0.2);
+        }
+
+        .offering-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .offering-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
+
+        .offering-card p {
+            font-size: 14px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* ============ WHAT YOU GET SECTION ============ */
+        .what-you-get {
+           
+            padding: 80px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .checklist-item {
+            display: flex;
+            gap: 15px;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .checklist-item::before {
+            content: '✓';
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 20px;
+            min-width: 30px;
+            flex-shrink: 0;
+        }
+
+        .materials {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .material-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 212, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .material-icon {
+            font-size: 32px;
+            min-width: 50px;
+        }
+
+        .material-info h4 {
+            color: #ffc107;
+            margin-bottom: 5px;
+        }
+
+        .material-info p {
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+
+        /* ============ PRICING SECTION ============ */
+        .pricing {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border: 2px solid #ffc107;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .price {
+            font-size: 60px;
+            font-weight: 800;
+            color: #ffc107;
+            margin: 20px 0;
+        }
+
+        .price-currency {
+            font-size: 24px;
+            vertical-align: super;
+        }
+
+        .price-period {
+            display: block;
+            font-size: 16px;
+            color: #e0e0e0;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .pricing-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-benefit {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-benefit::before {
+            content: '✓';
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .guarantee {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+            border: 2px solid #00d4ff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .guarantee-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        .guarantee-text {
+            color: #e0e0e0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ============ TESTIMONIALS SECTION ============ */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(0, 212, 255, 0.05);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            color: #fff;
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #ffc107;
+            font-weight: 600;
+        }
+
+        /* ============ FINAL CTA SECTION ============ */
+        .final-cta {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: #0f0f1e;
+            color: #999;
+            text-align: center;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+
+        /* ============ ANIMATIONS ============ */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        /* ============ RESPONSIVE DESIGN ============ */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 0;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .content-grid {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Header */
+            header .container {
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .logo span {
+                font-size: 14px;
+            }
+
+            .header-cta a {
+                padding: 8px 20px;
+                font-size: 12px;
+            }
+
+            /* Hero Section */
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 50px 0;
+                min-height: auto;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero-features{
+                flex-direction: column;
+            }
+
+            .hero-image {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 40px;
+                word-spacing: normal;
+                width: 80%;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+
+            .stat-label {
+                font-size: 12px;
+            }
+
+            .hero-card {
+                padding: 25px;
+            }
+
+            .card-header {
+                font-size: 16px;
+            }
+
+            .card-feature {
+                font-size: 13px;
+            }
+
+            .price-value {
+                font-size: 28px;
+            }
+
+            .cta-primary {
+                width: 90%;
+                padding: 14px 30px;
+                font-size: 15px;
+            }
+
+            /* Sections */
+            .offerings,
+            .what-you-get,
+            .pricing,
+            .testimonials {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .offerings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta h2 {
+                font-size: 28px;
+            }
+
+            .price {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* Header */
+            .logo {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+
+            .logo span {
+                font-size: 11px;
+            }
+
+            .header-cta a {
+                padding: 8px 15px;
+                font-size: 11px;
+            }
+
+            /* Hero */
+            h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .feature-item {
+                font-size: 13px;
+            }
+
+            .cta-primary {
+                width: 100%;
+                padding: 12px 25px;
+                font-size: 13px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .stat-label {
+                font-size: 11px;
+            }
+
+            .hero-card {
+                padding: 20px;
+            }
+
+            .card-header {
+                font-size: 15px;
+            }
+
+            .card-feature {
+                font-size: 12px;
+                gap: 8px;
+            }
+
+            .card-icon {
+                font-size: 18px;
+            }
+
+            /* Sections */
+            .offerings,
+            .what-you-get,
+            .pricing,
+            .testimonials {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .offerings-grid {
+                gap: 20px;
+            }
+
+            .offering-card {
+                padding: 20px;
+            }
+
+            .offering-icon {
+                font-size: 40px;
+            }
+
+            .checklist-item {
+                font-size: 14px;
+                gap: 10px;
+            }
+
+            .material-item {
+                gap: 10px;
+                padding: 15px;
+            }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 24px;
+            }
+
+            .final-cta p {
+                font-size: 15px;
+            }
+
+            .price {
+                font-size: 40px;
+            }
+
+            footer {
+                padding: 30px 0;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                N7D™
+                <span>Negócio Digital</span>
+            </div>
+            <div class="header-cta">
+                <a href="https://pay.kursinha.com/c/6a3bcaf6ece805d99ac52a03">COMEÇAR AGORA</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🎯 MÉTODO N7D™</span>
+            <h1>
+                Negócio
+                <span class="highlight">Digital</span>
+                em 7 Dias
+            </h1>
+            <p class="hero-subtitle">
+                Aprenda a criar uma fonte de renda online utilizando Inteligência Artificial, WhatsApp e ferramentas
+                gratuitas, mesmo sem experiência em tecnologia ou marketing.
+            </p>
+
+            <div class="hero-features">
+                <div class="feature-item">Passo a passo simples e prático</div>
+                <div class="feature-item">Use IA a seu favor</div>
+                <div class="feature-item">WhatsApp como ferramenta de vendas</div>
+                <div class="feature-item">Comece hoje e fature amanhã</div>
+            </div>
+
+            <a href="https://pay.kursinha.com/c/6a3bcaf6ece805d99ac52a03" class="cta-primary">QUERO COMEÇAR AGORA!</a>
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Prompts IA</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Prático</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Dias</div>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="card-header">Método N7D™</div>
+                <div class="card-content">
+                    <div class="card-feature">
+                        <span class="card-icon">📖</span> E-book Completo
+                    </div>
+                    <div class="card-feature">
+                        <span class="card-icon">💼</span> Templates Prontos
+                    </div>
+                    <div class="card-feature">
+                        <span class="card-icon">✅</span> Checklist 7 Dias
+                    </div>
+                    <div class="card-feature">
+                        <span class="card-icon">🤖</span> Prompts de IA
+                    </div>
+                </div>
+                <div class="card-price">
+                    <span class="price-value">5.000</span> Kz
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- What We Offer -->
+        <section class="offerings">
+            <h2 class="section-title">O que você vai receber</h2>
+            <div class="offerings-grid">
+                <div class="offering-card">
+                    <div class="offering-icon">📖</div>
+                    <h3>E-book Completo</h3>
+                    <p>Passo a passo detalhado com 11 capítulos estruturados para iniciantes.</p>
+                </div>
+                <div class="offering-card">
+                    <div class="offering-icon">💻</div>
+                    <h3>Exercícios Práticos</h3>
+                    <p>Exercícios de implementação ao final de cada capítulo.</p>
+                </div>
+                <div class="offering-card">
+                    <div class="offering-icon">📋</div>
+                    <h3>Checklists</h3>
+                    <p>Checklists de 7 dias para você acompanhar seu progresso.</p>
+                </div>
+                <div class="offering-card">
+                    <div class="offering-icon">🤖</div>
+                    <h3>50+ Prompts de IA</h3>
+                    <p>Prompts prontos para usar em ChatGPT, Gemini e ferramentas similares.</p>
+                </div>
+                <div class="offering-card">
+                    <div class="offering-icon">📁</div>
+                    <h3>Templates Prontos</h3>
+                    <p>Modelos e templates para acelerar seu negócio.</p>
+                </div>
+                <div class="offering-card">
+                    <div class="offering-icon">🎁</div>
+                    <h3>Bônus Exclusivos</h3>
+                    <p>Extras e recursos adicionais para potencializar seus resultados.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- What You Get Details -->
+    <section class="what-you-get">
+        <div class="container">
+            <div class="content-grid">
+                <div>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">
+                        Tudo que você precisa
+                        <br>
+                        <span class="highlight">para começar</span>
+                    </h2>
+                    <div class="checklist">
+                        <div class="checklist-item">E-book completo passo a passo</div>
+                        <div class="checklist-item">Workbook com exercícios práticos</div>
+                        <div class="checklist-item">50+ prompts de IA prontos para usar</div>
+                        <div class="checklist-item">Templates e modelos prontos</div>
+                        <div class="checklist-item">Checklist dos 7 dias</div>
+                        <div class="checklist-item">Bônus exclusivos</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="section-title" style="text-align: center; margin-bottom: 30px;">
+                        Acesso
+                        <span class="highlight">imediato</span>
+                    </h2>
+                    <div class="materials">
+                        <div class="material-item">
+                            <div class="material-icon">📖</div>
+                            <div class="material-info">
+                                <h4>E-book Método N7D™</h4>
+                                <p>Guia completo com 11 capítulos</p>
+                            </div>
+                        </div>
+                        <div class="material-item">
+                            <div class="material-icon">📝</div>
+                            <div class="material-info">
+                                <h4>Workbook</h4>
+                                <p>Exercícios de implementação</p>
+                            </div>
+                        </div>
+                        <div class="material-item">
+                            <div class="material-icon">🤖</div>
+                            <div class="material-info">
+                                <h4>50+ Prompts de IA</h4>
+                                <p>Prontos para usar</p>
+                            </div>
+                        </div>
+                        <div class="material-item">
+                            <div class="material-icon">✅</div>
+                            <div class="material-info">
+                                <h4>Checklist 7 Dias</h4>
+                                <p>Seu plano de ação</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2 class="section-title">Quem já começou com sucesso</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Nunca imaginei que conseguiria criar um negócio digital em apenas uma semana. O método é
+                        extremamente prático!"
+                    </p>
+                    <p class="testimonial-author">— João Silva, Luanda</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Os 50+ prompts de IA foram um diferencial. Consigo criar conteúdo profissional em minutos!"
+                    </p>
+                    <p class="testimonial-author">— Maria Santos, Bengo</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Como desempregado, este curso foi a porta de entrada para minha independência financeira."
+                    </p>
+                    <p class="testimonial-author">— Carlos Oliveira, Huíla</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="pricing">
+            <h2 class="section-title">Investimento para começar</h2>
+            <div class="pricing-card">
+                <h3 style="font-size: 20px; margin-bottom: 10px;">Método N7D™ Completo</h3>
+                <div class="price">
+                    <span class="price-currency">5.000</span> Kz
+                    <span class="price-period">Pagamento único • Acesso imediato</span>
+                </div>
+
+                <div class="pricing-benefits">
+                    <div class="pricing-benefit">E-book completo (11 capítulos)</div>
+                    <div class="pricing-benefit">Workbook com exercícios</div>
+                    <div class="pricing-benefit">50+ Prompts de IA</div>
+                    <div class="pricing-benefit">Templates prontos</div>
+                    <div class="pricing-benefit">Checklist dos 7 dias</div>
+                    <div class="pricing-benefit">Bônus exclusivos</div>
+                </div>
+
+                <a href="https://pay.kursinha.com/c/6a3bcaf6ece805d99ac52a03" class="cta-primary"
+                    style="width: 100%; display: inline-block;">GARANTIR ACESSO AGORA</a>
+
+                <div class="guarantee">
+                    <div class="guarantee-title">
+                        🛡️ Garantia Incondicional
+                    </div>
+                    <div class="guarantee-text">
+                        7 dias para testar. Não gostou? Devolvemos 100% do seu dinheiro.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Pronto para transformar sua vida financeira?</h2>
+            <p>Comece hoje mesmo a criar sua fonte de renda online</p>
+            <a href="https://pay.kursinha.com/c/6a3bcaf6ece805d99ac52a03" class="cta-primary"
+                style="background: #fff; color: #00d4ff; font-weight: 700;">QUERO COMEÇAR AGORA</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Método N7D™ - Negócio Digital em 7 Dias. Todos os direitos reservados.</p>
+            <p>Desenvolvido com dedicação para empreendedores angolanos.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for CTAs
+        document.querySelectorAll('.cta-primary').forEach(button => {
+            button.addEventListener('click', function (e) {
+                // Deixar redirecionamento normal funcionar
+            });
+        });
+
+        // Animation on scroll para elementos abaixo do hero
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.offering-card, .testimonial-card, .material-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Efeito parallax suave
+        window.addEventListener('scroll', function () {
+            const scrollY = window.scrollY;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrollY * 0.3}px)`;
+            }
+        });
+    </script>
+</body>
+
+</html>
